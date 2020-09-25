@@ -36,7 +36,7 @@ jobs:
 
     - name: Load upstream commits
       run : |
-        git remote add offical https://github.com/v2ray/v2ray-core.git
+        git remote add offical https://github.com/v2fly/v2ray-core.git
         git fetch offical
         git pull offical master
 
