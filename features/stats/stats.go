@@ -64,10 +64,6 @@ type Manager interface {
 
 	// RegisterCounter registers a new counter to the manager. The identifier string must not be empty, and unique among other counters.
 	RegisterCounter(string) (Counter, error)
-<<<<<<< HEAD
-=======
-	// UnregisterCounter unregisters a counter from the manager by its identifier.
->>>>>>> 73311d10568836793da339e9eff269c5d7d964e2
 	UnregisterCounter(string) error
 	// GetCounter returns a counter by its identifier.
 	GetCounter(string) Counter
@@ -122,11 +118,7 @@ func (NoopManager) RegisterCounter(string) (Counter, error) {
 
 // UnregisterCounter implements Manager.
 func (NoopManager) UnregisterCounter(string) error {
-<<<<<<< HEAD
 	return newError("not implemented")
-=======
-	return nil
->>>>>>> 73311d10568836793da339e9eff269c5d7d964e2
 }
 
 // GetCounter implements Manager.

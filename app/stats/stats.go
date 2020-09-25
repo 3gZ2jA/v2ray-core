@@ -50,15 +50,11 @@ func (m *Manager) RegisterCounter(name string) (stats.Counter, error) {
 	return c, nil
 }
 
-<<<<<<< HEAD
-=======
-// UnregisterCounter implements stats.Manager.
->>>>>>> 73311d10568836793da339e9eff269c5d7d964e2
+
 func (m *Manager) UnregisterCounter(name string) error {
 	m.access.Lock()
 	defer m.access.Unlock()
 
-<<<<<<< HEAD
 	if _, found := m.counters[name]; !found {
 		return newError("Counter ", name, " was not found.")
 	}
@@ -67,16 +63,7 @@ func (m *Manager) UnregisterCounter(name string) error {
 	return nil
 }
 
-=======
-	if _, found := m.counters[name]; found {
-		newError("remove counter ", name).AtDebug().WriteToLog()
-		delete(m.counters, name)
-	}
-	return nil
-}
 
-// GetCounter implements stats.Manager.
->>>>>>> 73311d10568836793da339e9eff269c5d7d964e2
 func (m *Manager) GetCounter(name string) stats.Counter {
 	m.access.RLock()
 	defer m.access.RUnlock()
